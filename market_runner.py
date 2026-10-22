@@ -176,6 +176,13 @@ def prepare_release(api, state, event, output, existing=None):
         version_key(str(cfg.get('version', '')))
         if not cfg.get('command_template') and not cfg.get('script'):
             raise ValueError('插件必须提供 command_template 或 script')
+        for field in ('command_template', 'script', 'type'):
+            if field in cfg and not isinstance(cfg[field], str):
+                raise ValueError('插件字段必须是文本: ' + field)
+        for field in ('name', 'description'):
+            value = cfg.get(field, '')
+            if not isinstance(value, (str, dict)) or isinstance(value, dict) and any(not isinstance(v, str) for v in value.values()):
+                raise ValueError('插件名称和描述必须是文本或中英文字段')
         minimum = str(cfg.get('min_app_version', '0.0.0'))
         if not re.fullmatch(r'\d+\.\d+\.\d+', minimum):
             raise ValueError('min_app_version 格式不合法')
@@ -374,7 +381,8 @@ def apply(state, event, prepared=None, publish=None):
         return state, ''
     state['audit'].append({'event': event_id, 'actor': actor, 'issue': int(number),
                            'action': command or 'submit', 'at': event.get('comment', event['issue'])['created_at']})
-    state['audit'] = state['audit'][-1000:]
+    # Retain event IDs durably: rerunning an old workflow must not restore revoked permissions.
+    # ponytail: one JSON index; shard requests/audit when the client response approaches 16 MiB.
     return state, message
 
 
