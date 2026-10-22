@@ -72,7 +72,8 @@ class API:
 
     def state(self):
         result = self.repo_api('/contents/market-state.json?ref=main')
-        return json.loads(base64.b64decode(result['content'])), result['sha']
+        blob = self.repo_api('/git/blobs/' + result['sha']) if result.get('encoding') == 'none' else result
+        return json.loads(base64.b64decode(blob['content'])), result['sha']
 
     def save(self, state, sha):
         return self.repo_api('/contents/market-state.json', 'PUT', {
@@ -282,7 +283,8 @@ def apply(state, event, prepared=None, publish=None):
             p = state['plugins'].get(data.get('plugin_id'))
             if not p or owns(p, actor) or any(x['id'] == actor['id'] for x in p['collaborators']):
                 raise ValueError('插件不存在或已属于此账号')
-            state['requests'][number] = {'kind': 'collaboration', 'plugin_id': p['id'], 'author': actor, 'status': 'awaiting_author'}
+            state['requests'][number] = {'kind': 'collaboration', 'plugin_id': p['id'], 'author': actor,
+                                         'message': str(data.get('message', ''))[:2000], 'status': 'awaiting_author'}
             message = '合作申请已登记，等待插件作者处理。'
         else:
             state['requests'][number] = {'kind': 'management', 'author': actor, 'status': 'open'}
