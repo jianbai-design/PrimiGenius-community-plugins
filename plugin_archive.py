@@ -88,16 +88,19 @@ def pack_source(directory, output):
     source = Path(directory).resolve(strict=True)
     if not source.is_dir() or not (source / 'config.json').is_file():
         raise ValueError('请选择包含 config.json 的插件目录')
-    ignored = {'.git', '__pycache__', 'node_modules', '.cache', 'cache', '.venv'}
+    ignored = {'.git', '__pycache__', '.cache', '.venv'}
     count = total = 0
     with zipfile.ZipFile(output, 'w', zipfile.ZIP_DEFLATED) as archive:
         for current, directories, files in os.walk(source, followlinks=False):
             directories[:] = sorted(d for d in directories if d not in ignored)
             for name in directories + files:
-                if Path(current, name).is_symlink():
+                child = Path(current, name)
+                if child.is_symlink() or getattr(child, 'is_junction', lambda: False)():
                     raise ValueError('插件源码不能包含符号链接')
             for name in sorted(files):
                 file = Path(current, name)
+                if file.resolve() == Path(output).resolve():
+                    continue
                 if name in ('.env', 'id_rsa', 'id_ed25519') or 'private' in name.lower() and name.lower().endswith(('.pem', '.key')):
                     raise ValueError('源码目录包含疑似凭据文件，请先移出: ' + name)
                 count += 1
@@ -120,7 +123,7 @@ def replace_plugin(zip_path, destination):
         stage, backup = Path(temporary) / 'new', Path(temporary) / 'previous'
         stage.mkdir()
         config = extract_plugin(zip_path, stage)
-        if dest.is_symlink():
+        if dest.is_symlink() or getattr(dest, 'is_junction', lambda: False)():
             raise ValueError('安装目录不能是符号链接')
         if dest.exists():
             old_path = dest / 'config.json'
