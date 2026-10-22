@@ -1,9 +1,131 @@
 {
   "administrator_id": 134767426,
-  "plugins": {},
-  "requests": {},
+  "plugins": {
+    "community_134767426_market_acceptance_fixture": {
+      "id": "community_134767426_market_acceptance_fixture",
+      "original_id": "market_acceptance_fixture",
+      "owner": {
+        "id": 134767426,
+        "login": "jianbai-design"
+      },
+      "collaborators": [],
+      "metadata": {
+        "id": "community_134767426_market_acceptance_fixture",
+        "version": "0.0.1",
+        "type": "cli",
+        "name": {
+          "zh": "临时市场验收插件",
+          "en": "Temporary market acceptance fixture"
+        },
+        "description": {
+          "zh": "临时验收数据，完成后清理",
+          "en": "Temporary validation fixture, removed after verification"
+        },
+        "command_template": "echo test",
+        "developer_signature": {
+          "developer": "jianbai-design"
+        },
+        "marketplace": {
+          "source": "github:jianbai-design/PrimiGenius-community-plugins",
+          "owner_github_id": 134767426,
+          "owner_login": "jianbai-design",
+          "submitted_by": {
+            "id": 134767426,
+            "login": "jianbai-design"
+          }
+        }
+      },
+      "published": null,
+      "files": {},
+      "listed": true
+    }
+  },
+  "requests": {
+    "1": {
+      "kind": "release",
+      "issue": 1,
+      "author": {
+        "id": 134767426,
+        "login": "jianbai-design"
+      },
+      "owner": {
+        "id": 134767426,
+        "login": "jianbai-design"
+      },
+      "plugin_id": "community_134767426_market_acceptance_fixture",
+      "original_id": "market_acceptance_fixture",
+      "version": "0.0.1",
+      "source": {
+        "sha256": "ccd07ad31836cb79bb9b6d4d469a44caf89aaf9afdd189cad9993df3ad372696",
+        "asset_id": 665969798,
+        "release_id": 420761312,
+        "repository": "jianbai-design/PrimiGenius-market-uploads"
+      },
+      "metadata": {
+        "id": "community_134767426_market_acceptance_fixture",
+        "version": "0.0.1",
+        "type": "cli",
+        "name": {
+          "zh": "临时市场验收插件",
+          "en": "Temporary market acceptance fixture"
+        },
+        "description": {
+          "zh": "临时验收数据，完成后清理",
+          "en": "Temporary validation fixture, removed after verification"
+        },
+        "command_template": "echo test",
+        "developer_signature": {
+          "developer": "jianbai-design"
+        },
+        "marketplace": {
+          "source": "github:jianbai-design/PrimiGenius-community-plugins",
+          "owner_github_id": 134767426,
+          "owner_login": "jianbai-design",
+          "submitted_by": {
+            "id": 134767426,
+            "login": "jianbai-design"
+          }
+        }
+      },
+      "sha256": "120e7a5612eb4c88000123b9d4009d8055f3548e39b153feadcd74373f2350fa",
+      "size": 620,
+      "files": {
+        "config.json": {
+          "sha256": "c5ebe3ac9c5e6cef87f808f6011f2258653efd0fae5b945b3ad9fdd52d559d0f",
+          "size": 692
+        },
+        "scripts/run.sh": {
+          "sha256": "dcdc180d914191af8a83356ea17ae951361eb6841dad9bb782aef24a3ce3dedc",
+          "size": 20
+        }
+      },
+      "changes": [
+        {
+          "path": "config.json",
+          "change": "added"
+        },
+        {
+          "path": "scripts/run.sh",
+          "change": "added"
+        }
+      ],
+      "changelog": "Temporary end-to-end acceptance test, removed after verification.",
+      "status": "pending_review"
+    }
+  },
   "blocked": [],
   "reviewers": [],
-  "audit": [],
+  "audit": [
+    {
+      "event": "issue:1",
+      "actor": {
+        "id": 134767426,
+        "login": "jianbai-design"
+      },
+      "issue": 1,
+      "action": "submit",
+      "at": "2026-10-22T13:30:51Z"
+    }
+  ],
   "schema": 1
 }
