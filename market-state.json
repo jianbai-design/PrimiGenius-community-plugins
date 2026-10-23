@@ -489,7 +489,7 @@
           }
         ],
         "author": "PrimiGenius",
-        "version": "1.0.0",
+        "version": "1.0.1",
         "developer_signature": {
           "tool_name": "差异基因表达排序图",
           "developer": "jianbai-design",
@@ -507,17 +507,17 @@
       },
       "published": {
         "id": "community_134767426_deg_rank_plot",
-        "version": "1.0.0",
-        "sha256": "b16cc62b271417337b69fee429737fea5a533688ce13bb3df090ddf93d2b2c23",
+        "version": "1.0.1",
+        "sha256": "c556dc9e51ac3ef0578229dc9044e6a882e003134887f07caa9510e2b17e358f",
         "size": 86044,
         "owner_github_id": 134767426,
         "source": "github:jianbai-design/PrimiGenius-community-plugins",
-        "tag": "community_134767426_deg_rank_plot-v1.0.0",
-        "asset": "community_134767426_deg_rank_plot-1.0.0.zip",
+        "tag": "community_134767426_deg_rank_plot-v1.0.1",
+        "asset": "community_134767426_deg_rank_plot-1.0.1.zip",
         "min_app_version": "0.0.0",
-        "manifest": "eyJhc3NldCI6ImNvbW11bml0eV8xMzQ3Njc0MjZfZGVnX3JhbmtfcGxvdC0xLjAuMC56aXAiLCJpZCI6ImNvbW11bml0eV8xMzQ3Njc0MjZfZGVnX3JhbmtfcGxvdCIsIm1pbl9hcHBfdmVyc2lvbiI6IjAuMC4wIiwib3duZXJfZ2l0aHViX2lkIjoxMzQ3Njc0MjYsInNoYTI1NiI6ImIxNmNjNjJiMjcxNDE3MzM3YjY5ZmVlNDI5NzM3ZmVhNWE1MzM2ODhjZTEzYmIzZGYwOTBkZGY5M2QyYjJjMjMiLCJzaXplIjo4NjA0NCwic291cmNlIjoiZ2l0aHViOmppYW5iYWktZGVzaWduL1ByaW1pR2VuaXVzLWNvbW11bml0eS1wbHVnaW5zIiwidGFnIjoiY29tbXVuaXR5XzEzNDc2NzQyNl9kZWdfcmFua19wbG90LXYxLjAuMCIsInZlcnNpb24iOiIxLjAuMCJ9",
-        "signature": "cmfMsqnv1/4kizL9kfvhabFiCIwkizgy9//31qSmxbSsACGth+5nwjAtaydXvVlzRjuF1Ll25vqeCkn3ANJP0ip2OcdjAebm3fJpH7/UqZiLylGxX9nEV+weC1EcIFaDclbP2nM7AG9FB/pRDglhPWu3mFEHKJwzXfJcLAEJglwhH5bXAavTHSKsQONW+gnFc665UsL13lHhq2VPDCvOJaXbkF1BFtjx951VUteginNqd4S5XBYednNcMDmUrde5AXEH4QOow8kaJIEj/eNpeQ2AqBt9haVq5JCKxFPiW+h1FbyPan0dpaIE3+VnHHO64dQee+uN+6i3BJ4I/5iO2gxJrIGFArHZlavS6MbHl00tyBQ9pyapwSKEcJ6pfaG9vq7g+0ZywjnEaUVhhGKuQ5SeeJmQcHRb8eY/NKGObUzSaMF5gwc1o53AzfL7AlKiF1BQ/g4VpOMItk620o7r8dIDAAJ9bHOKcwDBYf84ze+dETih5/Ua9tgI9dDw7JW6",
-        "url": "https://github.com/jianbai-design/PrimiGenius-community-plugins/releases/tag/community_134767426_deg_rank_plot-v1.0.0"
+        "manifest": "eyJhc3NldCI6ImNvbW11bml0eV8xMzQ3Njc0MjZfZGVnX3JhbmtfcGxvdC0xLjAuMS56aXAiLCJpZCI6ImNvbW11bml0eV8xMzQ3Njc0MjZfZGVnX3JhbmtfcGxvdCIsIm1pbl9hcHBfdmVyc2lvbiI6IjAuMC4wIiwib3duZXJfZ2l0aHViX2lkIjoxMzQ3Njc0MjYsInNoYTI1NiI6ImM1NTZkYzllNTFhYzNlZjA1NzgyMjlkYzkwNDRlNmE4ODJlMDAzMTM0ODg3ZjA3Y2FhOTUxMGUyYjE3ZTM1OGYiLCJzaXplIjo4NjA0NCwic291cmNlIjoiZ2l0aHViOmppYW5iYWktZGVzaWduL1ByaW1pR2VuaXVzLWNvbW11bml0eS1wbHVnaW5zIiwidGFnIjoiY29tbXVuaXR5XzEzNDc2NzQyNl9kZWdfcmFua19wbG90LXYxLjAuMSIsInZlcnNpb24iOiIxLjAuMSJ9",
+        "signature": "doC7s+H3mM22PNUJNu13JIDqFJ8mGua6rFrz9JaF5nFQRbqHqe+7nPj5xjPp4aNzuxh1v6Zbv+jb1KDGtUxXptxPHJoxsftHgmQh4gghUiBaXiAKS9GMRIypDPIv/BoQo0+izhkwHYcoLljbMv0CHzvXMp7iRrksfQvq5PLsvTiqm01UvpVxT7wyitPKl4jw3L0ElfgwJ3ardG3DS9WBL+dpGpif7eLF4YcVWcoS4Is/zvv90lUDxAQYP0ZLt3zPVYgU9Led0i0XdkvqKyQ3L4jNinRM17h07/qE3etVgPIzr/A58zMkcAuByZJTA+4qvOiiN8ujxRsgoT38bjRlU3ncVTXSMzETyLDvJZjlT90LLX56fmdc9jl002cIxm9QGzsXFjIh2xH7ZzvX2XSEEkPxi4qUzsb6CTc8xnvnBmiJrbbsgzNESmNAqAnUiTHYRy9HhNzdd83VxVW1Z4t0+olBsDahw0nWS0LmUlQV0F66/uYaGLyi8a3o/jyBvAQE",
+        "url": "https://github.com/jianbai-design/PrimiGenius-community-plugins/releases/tag/community_134767426_deg_rank_plot-v1.0.1"
       },
       "files": {
         "DEG Rank Plot.csv": {
@@ -525,7 +525,7 @@
           "size": 214180
         },
         "config.json": {
-          "sha256": "26dec2bf17dbed9999d768eb56372250ffb97e6d6a4b0b36c367537c19ad6bfd",
+          "sha256": "3314920e9f17ae9d811a10327ec75bba6c225e8d026d4a0de4ef41c9f41f2978",
           "size": 7229
         },
         "scripts/deg_rank_plot.R": {
@@ -1462,7 +1462,8 @@
         }
       ],
       "changelog": "做了一些修改",
-      "status": "pending_review"
+      "status": "published",
+      "reason": ""
     }
   },
   "blocked": [],
@@ -1517,6 +1518,16 @@
       "issue": 5,
       "action": "submit",
       "at": "2026-10-23T06:51:52Z"
+    },
+    {
+      "event": "comment:6359303147",
+      "actor": {
+        "id": 134767426,
+        "login": "jianbai-design"
+      },
+      "issue": 5,
+      "action": "approve",
+      "at": "2026-10-23T06:54:19Z"
     }
   ],
   "schema": 1
