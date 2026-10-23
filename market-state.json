@@ -151,8 +151,30 @@
           }
         }
       },
-      "published": null,
-      "files": {},
+      "published": {
+        "id": "community_134767426_counts_to_fpkm_tpm",
+        "version": "1.0.0",
+        "sha256": "0875f7802a785adbf2d8f9c66297e27d934cbbb290971db80499d6f17abb106a",
+        "size": 4470,
+        "owner_github_id": 134767426,
+        "source": "github:jianbai-design/PrimiGenius-community-plugins",
+        "tag": "community_134767426_counts_to_fpkm_tpm-v1.0.0",
+        "asset": "community_134767426_counts_to_fpkm_tpm-1.0.0.zip",
+        "min_app_version": "0.0.0",
+        "manifest": "eyJhc3NldCI6ImNvbW11bml0eV8xMzQ3Njc0MjZfY291bnRzX3RvX2Zwa21fdHBtLTEuMC4wLnppcCIsImlkIjoiY29tbXVuaXR5XzEzNDc2NzQyNl9jb3VudHNfdG9fZnBrbV90cG0iLCJtaW5fYXBwX3ZlcnNpb24iOiIwLjAuMCIsIm93bmVyX2dpdGh1Yl9pZCI6MTM0NzY3NDI2LCJzaGEyNTYiOiIwODc1Zjc4MDJhNzg1YWRiZjJkOGY5YzY2Mjk3ZTI3ZDkzNGNiYmIyOTA5NzFkYjgwNDk5ZDZmMTdhYmIxMDZhIiwic2l6ZSI6NDQ3MCwic291cmNlIjoiZ2l0aHViOmppYW5iYWktZGVzaWduL1ByaW1pR2VuaXVzLWNvbW11bml0eS1wbHVnaW5zIiwidGFnIjoiY29tbXVuaXR5XzEzNDc2NzQyNl9jb3VudHNfdG9fZnBrbV90cG0tdjEuMC4wIiwidmVyc2lvbiI6IjEuMC4wIn0=",
+        "signature": "UR9MEfIVn1LduMk5c5nu/99XvCMtlHE20IJDuhUjUSiOrxufk8tqoaGabsqVNiRulZJPxZlaOojHKd4TZnbaNZI4KOocueUhrtZrrS89vP8SJ2xP4crscgvQulj61Pod8mdVDjwTZr0bZNsZr9qN9GMZqJnbLYgNcU+7qBYlAZPHYs79K/JljFOfuNXyLuotUAwonyRoYlMXhxgI5lh8Vq+wBRVfzG1W4U/2tXzm2OrC4zokF6tbe5oIurb6l4psmrLrdfQO2AEM9/WvIB6u/xEbRsXMM4zuhp0Lc02jcZNQtKSHsxl1EFC36KyRRE8wTohUXVUcljTPZ6HIPqyY1871WB1nEzQABlIMM25ZuwV3gz8v6W0WUGbAFxG4ZWNUM0Wx4b1XR6fiaGmUMxA3Rhvsec3eSdn/LL+MwuJSxaMCD7fiAuKiZv+Bel4LveOoU3EVXKf5KhSKuB2u9pN/2bAT/EEIOY6XBjjOzYDAsH7yB9FwFTp01FhIZbuneDm3",
+        "url": "https://github.com/jianbai-design/PrimiGenius-community-plugins/releases/tag/community_134767426_counts_to_fpkm_tpm-v1.0.0"
+      },
+      "files": {
+        "config.json": {
+          "sha256": "d66cb405265d1cdf75079ab6efc239f5372e59046838860c43a1d2fd009848a4",
+          "size": 4578
+        },
+        "scripts/counts_to_fpkm_tpm.py": {
+          "sha256": "3215a47d12aef526d29371f41d405771342c7479e11f43780dd5e63dc97d8760",
+          "size": 7863
+        }
+      },
       "listed": true
     }
   },
@@ -342,7 +364,8 @@
         }
       ],
       "changelog": "转换",
-      "status": "pending_review"
+      "status": "published",
+      "reason": ""
     }
   },
   "blocked": [],
@@ -357,6 +380,16 @@
       "issue": 3,
       "action": "submit",
       "at": "2026-10-23T04:17:34Z"
+    },
+    {
+      "event": "comment:6357298066",
+      "actor": {
+        "id": 134767426,
+        "login": "jianbai-design"
+      },
+      "issue": 3,
+      "action": "approve",
+      "at": "2026-10-23T04:20:50Z"
     }
   ],
   "schema": 1
