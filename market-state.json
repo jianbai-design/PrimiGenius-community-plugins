@@ -175,7 +175,7 @@
           "size": 7863
         }
       },
-      "listed": true
+      "listed": false
     },
     "community_134767426_deg_rank_plot": {
       "id": "community_134767426_deg_rank_plot",
@@ -1472,6 +1472,14 @@
         "login": "jianbai-design"
       },
       "status": "open"
+    },
+    "7": {
+      "kind": "management",
+      "author": {
+        "id": 134767426,
+        "login": "jianbai-design"
+      },
+      "status": "open"
     }
   },
   "blocked": [],
@@ -1556,6 +1564,26 @@
       "issue": 6,
       "action": "submit",
       "at": "2026-10-23T06:56:49Z"
+    },
+    {
+      "event": "comment:issue-7",
+      "actor": {
+        "id": 134767426,
+        "login": "jianbai-design"
+      },
+      "issue": 7,
+      "action": "unlist",
+      "at": "2026-10-23T11:28:54Z"
+    },
+    {
+      "event": "issue:7",
+      "actor": {
+        "id": 134767426,
+        "login": "jianbai-design"
+      },
+      "issue": 7,
+      "action": "submit",
+      "at": "2026-10-23T11:28:54Z"
     }
   ],
   "schema": 1
