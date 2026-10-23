@@ -505,8 +505,34 @@
           }
         }
       },
-      "published": null,
-      "files": {},
+      "published": {
+        "id": "community_134767426_deg_rank_plot",
+        "version": "1.0.0",
+        "sha256": "b16cc62b271417337b69fee429737fea5a533688ce13bb3df090ddf93d2b2c23",
+        "size": 86044,
+        "owner_github_id": 134767426,
+        "source": "github:jianbai-design/PrimiGenius-community-plugins",
+        "tag": "community_134767426_deg_rank_plot-v1.0.0",
+        "asset": "community_134767426_deg_rank_plot-1.0.0.zip",
+        "min_app_version": "0.0.0",
+        "manifest": "eyJhc3NldCI6ImNvbW11bml0eV8xMzQ3Njc0MjZfZGVnX3JhbmtfcGxvdC0xLjAuMC56aXAiLCJpZCI6ImNvbW11bml0eV8xMzQ3Njc0MjZfZGVnX3JhbmtfcGxvdCIsIm1pbl9hcHBfdmVyc2lvbiI6IjAuMC4wIiwib3duZXJfZ2l0aHViX2lkIjoxMzQ3Njc0MjYsInNoYTI1NiI6ImIxNmNjNjJiMjcxNDE3MzM3YjY5ZmVlNDI5NzM3ZmVhNWE1MzM2ODhjZTEzYmIzZGYwOTBkZGY5M2QyYjJjMjMiLCJzaXplIjo4NjA0NCwic291cmNlIjoiZ2l0aHViOmppYW5iYWktZGVzaWduL1ByaW1pR2VuaXVzLWNvbW11bml0eS1wbHVnaW5zIiwidGFnIjoiY29tbXVuaXR5XzEzNDc2NzQyNl9kZWdfcmFua19wbG90LXYxLjAuMCIsInZlcnNpb24iOiIxLjAuMCJ9",
+        "signature": "cmfMsqnv1/4kizL9kfvhabFiCIwkizgy9//31qSmxbSsACGth+5nwjAtaydXvVlzRjuF1Ll25vqeCkn3ANJP0ip2OcdjAebm3fJpH7/UqZiLylGxX9nEV+weC1EcIFaDclbP2nM7AG9FB/pRDglhPWu3mFEHKJwzXfJcLAEJglwhH5bXAavTHSKsQONW+gnFc665UsL13lHhq2VPDCvOJaXbkF1BFtjx951VUteginNqd4S5XBYednNcMDmUrde5AXEH4QOow8kaJIEj/eNpeQ2AqBt9haVq5JCKxFPiW+h1FbyPan0dpaIE3+VnHHO64dQee+uN+6i3BJ4I/5iO2gxJrIGFArHZlavS6MbHl00tyBQ9pyapwSKEcJ6pfaG9vq7g+0ZywjnEaUVhhGKuQ5SeeJmQcHRb8eY/NKGObUzSaMF5gwc1o53AzfL7AlKiF1BQ/g4VpOMItk620o7r8dIDAAJ9bHOKcwDBYf84ze+dETih5/Ua9tgI9dDw7JW6",
+        "url": "https://github.com/jianbai-design/PrimiGenius-community-plugins/releases/tag/community_134767426_deg_rank_plot-v1.0.0"
+      },
+      "files": {
+        "DEG Rank Plot.csv": {
+          "sha256": "68fa211f054bc1222e159d886741f50a0a79d554c66805108dca7463ce98da6e",
+          "size": 214180
+        },
+        "config.json": {
+          "sha256": "26dec2bf17dbed9999d768eb56372250ffb97e6d6a4b0b36c367537c19ad6bfd",
+          "size": 7229
+        },
+        "scripts/deg_rank_plot.R": {
+          "sha256": "a6209a146e2d05dbbaba1440d57596346e48834f46cbb9e6a5f12ccafdee9be9",
+          "size": 7988
+        }
+      },
       "listed": true
     }
   },
@@ -1070,7 +1096,8 @@
         }
       ],
       "changelog": "",
-      "status": "pending_review"
+      "status": "published",
+      "reason": ""
     }
   },
   "blocked": [],
@@ -1105,6 +1132,16 @@
       "issue": 4,
       "action": "submit",
       "at": "2026-10-23T06:49:07Z"
+    },
+    {
+      "event": "comment:6359238726",
+      "actor": {
+        "id": 134767426,
+        "login": "jianbai-design"
+      },
+      "issue": 4,
+      "action": "approve",
+      "at": "2026-10-23T06:49:54Z"
     }
   ],
   "schema": 1
