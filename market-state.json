@@ -1480,10 +1480,20 @@
         "login": "jianbai-design"
       },
       "status": "open"
+    },
+    "8": {
+      "kind": "management",
+      "author": {
+        "id": 134767426,
+        "login": "jianbai-design"
+      },
+      "status": "open"
     }
   },
   "blocked": [],
-  "reviewers": [],
+  "reviewers": [
+    242235968
+  ],
   "audit": [
     {
       "event": "issue:3",
@@ -1584,6 +1594,26 @@
       "issue": 7,
       "action": "submit",
       "at": "2026-10-23T11:28:54Z"
+    },
+    {
+      "event": "comment:issue-8",
+      "actor": {
+        "id": 134767426,
+        "login": "jianbai-design"
+      },
+      "issue": 8,
+      "action": "reviewer-add",
+      "at": "2026-10-23T12:05:06Z"
+    },
+    {
+      "event": "issue:8",
+      "actor": {
+        "id": 134767426,
+        "login": "jianbai-design"
+      },
+      "issue": 8,
+      "action": "submit",
+      "at": "2026-10-23T12:05:06Z"
     }
   ],
   "schema": 1
