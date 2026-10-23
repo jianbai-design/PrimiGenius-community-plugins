@@ -176,6 +176,338 @@
         }
       },
       "listed": true
+    },
+    "community_134767426_deg_rank_plot": {
+      "id": "community_134767426_deg_rank_plot",
+      "original_id": "deg_rank_plot",
+      "owner": {
+        "id": 134767426,
+        "login": "jianbai-design"
+      },
+      "collaborators": [],
+      "metadata": {
+        "id": "community_134767426_deg_rank_plot",
+        "name": {
+          "zh": "差异基因表达排序图",
+          "en": "DEG Rank Plot"
+        },
+        "description": {
+          "zh": "基于差异分析结果绘制基因表达变化排序图（颜色映射 P 值，点大小映射 Log2FoldChange 绝对值）。",
+          "en": "Draw ranked differential-expression curve from DE results (color mapped to P-value and point size mapped to absolute log2 fold change)."
+        },
+        "type": "R_panel",
+        "category": {
+          "en": "Advanced Visualization",
+          "zh": "高级可视化"
+        },
+        "docker_image": "rocker/r-ver:latest",
+        "script": "scripts/deg_rank_plot.R",
+        "icon": "fa-chart-line",
+        "icon_color": "#C62828",
+        "packages": [
+          "ggplot2",
+          "ggrepel",
+          "readxl",
+          "data.table",
+          "svglite"
+        ],
+        "layout": {
+          "default_columns": 3,
+          "default_gap": 12,
+          "row_groups": {
+            "row1": {
+              "columns": 3,
+              "gap": 12
+            },
+            "row2": {
+              "columns": 3,
+              "gap": 12
+            },
+            "row3": {
+              "columns": 3,
+              "gap": 12
+            },
+            "pcolor_row": {
+              "columns": 3,
+              "gap": 12
+            },
+            "bar_row": {
+              "columns": 3,
+              "gap": 12
+            },
+            "mark_row": {
+              "columns": 3,
+              "gap": 12
+            }
+          }
+        },
+        "parameters": [
+          {
+            "id": "datafile",
+            "label": {
+              "zh": "输入差异结果 (XLSX/CSV/TSV/TXT)*",
+              "en": "Input DE Result (XLSX/CSV/TSV/TXT)*"
+            },
+            "type": "file",
+            "required": true,
+            "accept": ".xlsx,.csv,.tsv,.txt"
+          },
+          {
+            "id": "gene_col",
+            "label": {
+              "zh": "基因列名",
+              "en": "Gene Column"
+            },
+            "type": "text",
+            "default": "Gene",
+            "row_group": "row1"
+          },
+          {
+            "id": "logfc_col",
+            "label": {
+              "zh": "Log2FC 列名",
+              "en": "Log2FC Column"
+            },
+            "type": "text",
+            "default": "log2FoldChange",
+            "row_group": "row1"
+          },
+          {
+            "id": "pvalue_col",
+            "label": {
+              "zh": "P值列名",
+              "en": "P-value Column"
+            },
+            "type": "text",
+            "default": "pvalue",
+            "row_group": "row1"
+          },
+          {
+            "id": "label_top_n",
+            "label": {
+              "zh": "显示TopN基因数",
+              "en": "TopN Genes To Label"
+            },
+            "type": "number",
+            "default": 10,
+            "min": 0,
+            "max": 100,
+            "row_group": "row2"
+          },
+          {
+            "id": "fc_cutoff",
+            "label": {
+              "zh": "Log2FC 阈值",
+              "en": "Log2FC Cutoff"
+            },
+            "type": "text",
+            "default": "1",
+            "row_group": "row2"
+          },
+          {
+            "id": "p_cutoff",
+            "label": {
+              "zh": "P值阈值",
+              "en": "P-value Cutoff"
+            },
+            "type": "text",
+            "default": "0.05",
+            "row_group": "row2"
+          },
+          {
+            "id": "width",
+            "label": {
+              "zh": "图宽",
+              "en": "Width"
+            },
+            "type": "number",
+            "default": 12,
+            "min": 4,
+            "max": 40,
+            "row_group": "row3"
+          },
+          {
+            "id": "height",
+            "label": {
+              "zh": "图高",
+              "en": "Height"
+            },
+            "type": "number",
+            "default": 8,
+            "min": 4,
+            "max": 40,
+            "row_group": "row3"
+          },
+          {
+            "id": "base_size",
+            "label": {
+              "zh": "基础字号",
+              "en": "Base Font Size"
+            },
+            "type": "number",
+            "default": 12,
+            "min": 8,
+            "max": 24,
+            "row_group": "row3"
+          },
+          {
+            "id": "p_color_high",
+            "label": {
+              "zh": "P值显著颜色",
+              "en": "P Significant Color"
+            },
+            "type": "color",
+            "default": "#FF0000",
+            "row_group": "pcolor_row",
+            "description": {
+              "zh": "P值越小（越显著）显示的颜色",
+              "en": "Color for small (significant) P-values"
+            }
+          },
+          {
+            "id": "p_color_mid",
+            "label": {
+              "zh": "P值中间颜色",
+              "en": "P Mid Color"
+            },
+            "type": "color",
+            "default": "#FFFFFF",
+            "row_group": "pcolor_row",
+            "description": {
+              "zh": "P值中间范围显示的颜色",
+              "en": "Color for mid-range P-values"
+            }
+          },
+          {
+            "id": "p_color_low",
+            "label": {
+              "zh": "P值不显著颜色",
+              "en": "P Non-significant Color"
+            },
+            "type": "color",
+            "default": "#0000FF",
+            "row_group": "pcolor_row",
+            "description": {
+              "zh": "P值越大（越不显著）显示的颜色",
+              "en": "Color for large (non-significant) P-values"
+            }
+          },
+          {
+            "id": "bar_min",
+            "label": {
+              "zh": "P值 Bar 最小值",
+              "en": "P Bar Min"
+            },
+            "type": "number",
+            "default": "",
+            "step": 0.01,
+            "placeholder": "Auto",
+            "row_group": "bar_row",
+            "description": {
+              "zh": "P值颜色条最小值，低于此值截断显示为显著色",
+              "en": "P-value color bar minimum; values below are clamped"
+            }
+          },
+          {
+            "id": "bar_max",
+            "label": {
+              "zh": "P值 Bar 最大值",
+              "en": "P Bar Max"
+            },
+            "type": "number",
+            "default": "",
+            "step": 0.01,
+            "placeholder": "Auto",
+            "row_group": "bar_row",
+            "description": {
+              "zh": "P值颜色条最大值，高于此值截断显示为不显著色",
+              "en": "P-value color bar maximum; values above are clamped"
+            }
+          },
+          {
+            "id": "bar_step",
+            "label": {
+              "zh": "P值 Bar 步进值",
+              "en": "P Bar Step"
+            },
+            "type": "number",
+            "default": "",
+            "step": 0.01,
+            "placeholder": "Auto",
+            "row_group": "bar_row",
+            "description": {
+              "zh": "P值颜色条刻度步进值",
+              "en": "P-value legend tick step"
+            }
+          },
+          {
+            "id": "mark_genes",
+            "label": {
+              "zh": "标记基因",
+              "en": "Mark Genes"
+            },
+            "type": "text",
+            "default": "",
+            "placeholder": "GeneA,GeneB,GeneC",
+            "row_group": "mark_row",
+            "layout": {
+              "col_span": 3
+            },
+            "description": {
+              "zh": "输入要标记的基因名，多个用逗号分隔",
+              "en": "Gene names to mark, separated by commas"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "id": "rank_svg",
+            "label": {
+              "zh": "排序图 (SVG)",
+              "en": "Rank Plot (SVG)"
+            },
+            "type": "svg",
+            "file_pattern": "deg_rank_plot\\.svg$"
+          },
+          {
+            "id": "rank_png",
+            "label": {
+              "zh": "排序图 (PNG)",
+              "en": "Rank Plot (PNG)"
+            },
+            "type": "png",
+            "file_pattern": "deg_rank_plot\\.png$"
+          },
+          {
+            "id": "rank_table",
+            "label": {
+              "zh": "排序结果表",
+              "en": "Ranked Table"
+            },
+            "type": "csv",
+            "file_pattern": "deg_rank_table\\.csv$"
+          }
+        ],
+        "author": "PrimiGenius",
+        "version": "1.0.0",
+        "developer_signature": {
+          "tool_name": "差异基因表达排序图",
+          "developer": "jianbai-design",
+          "develop_time": "2026-6-2"
+        },
+        "marketplace": {
+          "source": "github:jianbai-design/PrimiGenius-community-plugins",
+          "owner_github_id": 134767426,
+          "owner_login": "jianbai-design",
+          "submitted_by": {
+            "id": 134767426,
+            "login": "jianbai-design"
+          }
+        }
+      },
+      "published": null,
+      "files": {},
+      "listed": true
     }
   },
   "requests": {
@@ -366,6 +698,379 @@
       "changelog": "转换",
       "status": "published",
       "reason": ""
+    },
+    "4": {
+      "kind": "release",
+      "issue": 4,
+      "author": {
+        "id": 134767426,
+        "login": "jianbai-design"
+      },
+      "owner": {
+        "id": 134767426,
+        "login": "jianbai-design"
+      },
+      "plugin_id": "community_134767426_deg_rank_plot",
+      "original_id": "deg_rank_plot",
+      "version": "1.0.0",
+      "source": {
+        "repository": "jianbai-design/PrimiGenius-market-uploads",
+        "release_id": 421528462,
+        "asset_id": 668247166,
+        "sha256": "39c49c042a2d2c3cf21b55df5eb3f1cda021bd07e4e8e979df64fa7155110278"
+      },
+      "metadata": {
+        "id": "community_134767426_deg_rank_plot",
+        "name": {
+          "zh": "差异基因表达排序图",
+          "en": "DEG Rank Plot"
+        },
+        "description": {
+          "zh": "基于差异分析结果绘制基因表达变化排序图（颜色映射 P 值，点大小映射 Log2FoldChange 绝对值）。",
+          "en": "Draw ranked differential-expression curve from DE results (color mapped to P-value and point size mapped to absolute log2 fold change)."
+        },
+        "type": "R_panel",
+        "category": {
+          "en": "Advanced Visualization",
+          "zh": "高级可视化"
+        },
+        "docker_image": "rocker/r-ver:latest",
+        "script": "scripts/deg_rank_plot.R",
+        "icon": "fa-chart-line",
+        "icon_color": "#C62828",
+        "packages": [
+          "ggplot2",
+          "ggrepel",
+          "readxl",
+          "data.table",
+          "svglite"
+        ],
+        "layout": {
+          "default_columns": 3,
+          "default_gap": 12,
+          "row_groups": {
+            "row1": {
+              "columns": 3,
+              "gap": 12
+            },
+            "row2": {
+              "columns": 3,
+              "gap": 12
+            },
+            "row3": {
+              "columns": 3,
+              "gap": 12
+            },
+            "pcolor_row": {
+              "columns": 3,
+              "gap": 12
+            },
+            "bar_row": {
+              "columns": 3,
+              "gap": 12
+            },
+            "mark_row": {
+              "columns": 3,
+              "gap": 12
+            }
+          }
+        },
+        "parameters": [
+          {
+            "id": "datafile",
+            "label": {
+              "zh": "输入差异结果 (XLSX/CSV/TSV/TXT)*",
+              "en": "Input DE Result (XLSX/CSV/TSV/TXT)*"
+            },
+            "type": "file",
+            "required": true,
+            "accept": ".xlsx,.csv,.tsv,.txt"
+          },
+          {
+            "id": "gene_col",
+            "label": {
+              "zh": "基因列名",
+              "en": "Gene Column"
+            },
+            "type": "text",
+            "default": "Gene",
+            "row_group": "row1"
+          },
+          {
+            "id": "logfc_col",
+            "label": {
+              "zh": "Log2FC 列名",
+              "en": "Log2FC Column"
+            },
+            "type": "text",
+            "default": "log2FoldChange",
+            "row_group": "row1"
+          },
+          {
+            "id": "pvalue_col",
+            "label": {
+              "zh": "P值列名",
+              "en": "P-value Column"
+            },
+            "type": "text",
+            "default": "pvalue",
+            "row_group": "row1"
+          },
+          {
+            "id": "label_top_n",
+            "label": {
+              "zh": "显示TopN基因数",
+              "en": "TopN Genes To Label"
+            },
+            "type": "number",
+            "default": 10,
+            "min": 0,
+            "max": 100,
+            "row_group": "row2"
+          },
+          {
+            "id": "fc_cutoff",
+            "label": {
+              "zh": "Log2FC 阈值",
+              "en": "Log2FC Cutoff"
+            },
+            "type": "text",
+            "default": "1",
+            "row_group": "row2"
+          },
+          {
+            "id": "p_cutoff",
+            "label": {
+              "zh": "P值阈值",
+              "en": "P-value Cutoff"
+            },
+            "type": "text",
+            "default": "0.05",
+            "row_group": "row2"
+          },
+          {
+            "id": "width",
+            "label": {
+              "zh": "图宽",
+              "en": "Width"
+            },
+            "type": "number",
+            "default": 12,
+            "min": 4,
+            "max": 40,
+            "row_group": "row3"
+          },
+          {
+            "id": "height",
+            "label": {
+              "zh": "图高",
+              "en": "Height"
+            },
+            "type": "number",
+            "default": 8,
+            "min": 4,
+            "max": 40,
+            "row_group": "row3"
+          },
+          {
+            "id": "base_size",
+            "label": {
+              "zh": "基础字号",
+              "en": "Base Font Size"
+            },
+            "type": "number",
+            "default": 12,
+            "min": 8,
+            "max": 24,
+            "row_group": "row3"
+          },
+          {
+            "id": "p_color_high",
+            "label": {
+              "zh": "P值显著颜色",
+              "en": "P Significant Color"
+            },
+            "type": "color",
+            "default": "#FF0000",
+            "row_group": "pcolor_row",
+            "description": {
+              "zh": "P值越小（越显著）显示的颜色",
+              "en": "Color for small (significant) P-values"
+            }
+          },
+          {
+            "id": "p_color_mid",
+            "label": {
+              "zh": "P值中间颜色",
+              "en": "P Mid Color"
+            },
+            "type": "color",
+            "default": "#FFFFFF",
+            "row_group": "pcolor_row",
+            "description": {
+              "zh": "P值中间范围显示的颜色",
+              "en": "Color for mid-range P-values"
+            }
+          },
+          {
+            "id": "p_color_low",
+            "label": {
+              "zh": "P值不显著颜色",
+              "en": "P Non-significant Color"
+            },
+            "type": "color",
+            "default": "#0000FF",
+            "row_group": "pcolor_row",
+            "description": {
+              "zh": "P值越大（越不显著）显示的颜色",
+              "en": "Color for large (non-significant) P-values"
+            }
+          },
+          {
+            "id": "bar_min",
+            "label": {
+              "zh": "P值 Bar 最小值",
+              "en": "P Bar Min"
+            },
+            "type": "number",
+            "default": "",
+            "step": 0.01,
+            "placeholder": "Auto",
+            "row_group": "bar_row",
+            "description": {
+              "zh": "P值颜色条最小值，低于此值截断显示为显著色",
+              "en": "P-value color bar minimum; values below are clamped"
+            }
+          },
+          {
+            "id": "bar_max",
+            "label": {
+              "zh": "P值 Bar 最大值",
+              "en": "P Bar Max"
+            },
+            "type": "number",
+            "default": "",
+            "step": 0.01,
+            "placeholder": "Auto",
+            "row_group": "bar_row",
+            "description": {
+              "zh": "P值颜色条最大值，高于此值截断显示为不显著色",
+              "en": "P-value color bar maximum; values above are clamped"
+            }
+          },
+          {
+            "id": "bar_step",
+            "label": {
+              "zh": "P值 Bar 步进值",
+              "en": "P Bar Step"
+            },
+            "type": "number",
+            "default": "",
+            "step": 0.01,
+            "placeholder": "Auto",
+            "row_group": "bar_row",
+            "description": {
+              "zh": "P值颜色条刻度步进值",
+              "en": "P-value legend tick step"
+            }
+          },
+          {
+            "id": "mark_genes",
+            "label": {
+              "zh": "标记基因",
+              "en": "Mark Genes"
+            },
+            "type": "text",
+            "default": "",
+            "placeholder": "GeneA,GeneB,GeneC",
+            "row_group": "mark_row",
+            "layout": {
+              "col_span": 3
+            },
+            "description": {
+              "zh": "输入要标记的基因名，多个用逗号分隔",
+              "en": "Gene names to mark, separated by commas"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "id": "rank_svg",
+            "label": {
+              "zh": "排序图 (SVG)",
+              "en": "Rank Plot (SVG)"
+            },
+            "type": "svg",
+            "file_pattern": "deg_rank_plot\\.svg$"
+          },
+          {
+            "id": "rank_png",
+            "label": {
+              "zh": "排序图 (PNG)",
+              "en": "Rank Plot (PNG)"
+            },
+            "type": "png",
+            "file_pattern": "deg_rank_plot\\.png$"
+          },
+          {
+            "id": "rank_table",
+            "label": {
+              "zh": "排序结果表",
+              "en": "Ranked Table"
+            },
+            "type": "csv",
+            "file_pattern": "deg_rank_table\\.csv$"
+          }
+        ],
+        "author": "PrimiGenius",
+        "version": "1.0.0",
+        "developer_signature": {
+          "tool_name": "差异基因表达排序图",
+          "developer": "jianbai-design",
+          "develop_time": "2026-6-2"
+        },
+        "marketplace": {
+          "source": "github:jianbai-design/PrimiGenius-community-plugins",
+          "owner_github_id": 134767426,
+          "owner_login": "jianbai-design",
+          "submitted_by": {
+            "id": 134767426,
+            "login": "jianbai-design"
+          }
+        }
+      },
+      "sha256": "b16cc62b271417337b69fee429737fea5a533688ce13bb3df090ddf93d2b2c23",
+      "size": 86044,
+      "files": {
+        "DEG Rank Plot.csv": {
+          "sha256": "68fa211f054bc1222e159d886741f50a0a79d554c66805108dca7463ce98da6e",
+          "size": 214180
+        },
+        "config.json": {
+          "sha256": "26dec2bf17dbed9999d768eb56372250ffb97e6d6a4b0b36c367537c19ad6bfd",
+          "size": 7229
+        },
+        "scripts/deg_rank_plot.R": {
+          "sha256": "a6209a146e2d05dbbaba1440d57596346e48834f46cbb9e6a5f12ccafdee9be9",
+          "size": 7988
+        }
+      },
+      "changes": [
+        {
+          "path": "DEG Rank Plot.csv",
+          "change": "added"
+        },
+        {
+          "path": "config.json",
+          "change": "added"
+        },
+        {
+          "path": "scripts/deg_rank_plot.R",
+          "change": "added"
+        }
+      ],
+      "changelog": "",
+      "status": "pending_review"
     }
   },
   "blocked": [],
@@ -390,6 +1095,16 @@
       "issue": 3,
       "action": "approve",
       "at": "2026-10-23T04:20:50Z"
+    },
+    {
+      "event": "issue:4",
+      "actor": {
+        "id": 134767426,
+        "login": "jianbai-design"
+      },
+      "issue": 4,
+      "action": "submit",
+      "at": "2026-10-23T06:49:07Z"
     }
   ],
   "schema": 1
