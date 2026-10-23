@@ -1,9 +1,363 @@
 {
   "administrator_id": 134767426,
-  "plugins": {},
-  "requests": {},
+  "plugins": {
+    "community_134767426_counts_to_fpkm_tpm": {
+      "id": "community_134767426_counts_to_fpkm_tpm",
+      "original_id": "counts_to_fpkm_tpm",
+      "owner": {
+        "id": 134767426,
+        "login": "jianbai-design"
+      },
+      "collaborators": [],
+      "metadata": {
+        "id": "community_134767426_counts_to_fpkm_tpm",
+        "name": {
+          "zh": "Counts to FPKM/TPM",
+          "en": "Counts to FPKM/TPM"
+        },
+        "description": {
+          "zh": "将 featureCounts 插件生成的 clean.count.txt（仅含 Geneid 与样本计数）转换为标准化的 FPKM 与 TPM 表达矩阵。通过 GTF/GFF 注释文件自动计算每个基因的外显子合并长度，无需额外的长度文件。适用于跨样本表达量比较及下游可视化。",
+          "en": "Convert the featureCounts clean.count.txt (Geneid + sample counts only) into normalized FPKM and TPM matrices. Gene lengths are computed automatically from a GTF/GFF annotation (merged exon length), no separate length file needed."
+        },
+        "type": "cli",
+        "category": {
+          "zh": "转录组分析",
+          "en": "Transcriptomics"
+        },
+        "docker_image": "python:3.11-slim",
+        "local_binary": false,
+        "execution_mode": "single",
+        "shell": "bash",
+        "force_shell_entrypoint": true,
+        "script": "scripts/counts_to_fpkm_tpm.py",
+        "layout": {
+          "default_columns": 3,
+          "default_gap": 12,
+          "row_groups": {
+            "input_row": {
+              "columns": 2,
+              "gap": 12
+            },
+            "option_row": {
+              "columns": 3,
+              "gap": 12
+            }
+          }
+        },
+        "parameters": [
+          {
+            "id": "count_file",
+            "label": {
+              "zh": "Count 矩阵 (clean.count.txt)",
+              "en": "Count Matrix (clean.count.txt)"
+            },
+            "type": "file",
+            "required": true,
+            "allow_multiple": false,
+            "accept": ".txt,.tsv,.csv",
+            "row_group": "input_row",
+            "description": {
+              "zh": "featureCounts 插件输出的 clean.count.txt，第一列为基因 ID，其余列为各样本原始计数。",
+              "en": "The clean.count.txt from the featureCounts plugin: first column = gene IDs, remaining columns = raw sample counts."
+            }
+          },
+          {
+            "id": "gtf_file",
+            "label": {
+              "zh": "注释文件 GTF/GFF",
+              "en": "Annotation GTF/GFF"
+            },
+            "type": "file",
+            "required": true,
+            "allow_multiple": false,
+            "accept": ".gtf,.gff,.gff3",
+            "row_group": "input_row",
+            "description": {
+              "zh": "用于计算基因长度（合并外显子长度）。建议使用与 featureCounts 定量时相同的注释文件。",
+              "en": "Used to compute gene length (merged exon length). Use the same annotation as the featureCounts step."
+            }
+          },
+          {
+            "id": "gene_id_attr",
+            "label": {
+              "zh": "基因 ID 属性名",
+              "en": "Gene ID Attribute"
+            },
+            "type": "text",
+            "default": "gene_id",
+            "row_group": "option_row",
+            "description": {
+              "zh": "GTF 属性中表示基因 ID 的键名，通常为 gene_id（GTF）或 ID/gene（GFF3）。",
+              "en": "GTF attribute key for gene ID, usually gene_id (GTF) or ID/gene (GFF3)."
+            }
+          },
+          {
+            "id": "prefix",
+            "label": {
+              "zh": "输出文件前缀",
+              "en": "Output Prefix"
+            },
+            "type": "text",
+            "default": "gene",
+            "row_group": "option_row",
+            "description": {
+              "zh": "输出文件名前缀，默认 gene",
+              "en": "Output file name prefix (default: gene)"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "id": "fpkm_matrix",
+            "label": {
+              "zh": "FPKM 矩阵",
+              "en": "FPKM Matrix"
+            },
+            "type": "csv",
+            "file_pattern": "\\.FPKM\\.csv$",
+            "description": {
+              "zh": "Fragments Per Kilobase of transcript per Million mapped reads 标准化矩阵",
+              "en": "FPKM normalized expression matrix"
+            }
+          },
+          {
+            "id": "tpm_matrix",
+            "label": {
+              "zh": "TPM 矩阵",
+              "en": "TPM Matrix"
+            },
+            "type": "csv",
+            "file_pattern": "\\.TPM\\.csv$",
+            "description": {
+              "zh": "Transcripts Per Million 标准化矩阵（推荐用于跨样本比较）",
+              "en": "TPM normalized expression matrix (recommended for cross-sample comparison)"
+            }
+          }
+        ],
+        "command_template": "python3 /scripts/scripts/counts_to_fpkm_tpm.py --count_file {count_file} --gtf_file {gtf_file} --gene_id_attr '{gene_id_attr}' --prefix '{prefix}' --output_dir {output_dir}",
+        "developer_signature": {
+          "tool_name": "Counts to FPKM/TPM",
+          "developer": "jianbai-design",
+          "develop_time": "2026-09-18"
+        },
+        "version": "1.0.0",
+        "marketplace": {
+          "source": "github:jianbai-design/PrimiGenius-community-plugins",
+          "owner_github_id": 134767426,
+          "owner_login": "jianbai-design",
+          "submitted_by": {
+            "id": 134767426,
+            "login": "jianbai-design"
+          }
+        }
+      },
+      "published": null,
+      "files": {},
+      "listed": true
+    }
+  },
+  "requests": {
+    "3": {
+      "kind": "release",
+      "issue": 3,
+      "author": {
+        "id": 134767426,
+        "login": "jianbai-design"
+      },
+      "owner": {
+        "id": 134767426,
+        "login": "jianbai-design"
+      },
+      "plugin_id": "community_134767426_counts_to_fpkm_tpm",
+      "original_id": "counts_to_fpkm_tpm",
+      "version": "1.0.0",
+      "source": {
+        "repository": "jianbai-design/PrimiGenius-market-uploads",
+        "release_id": 421444897,
+        "asset_id": 667934842,
+        "sha256": "d5c2b6f5ca62b6c22681fb9aab341d1256c5c1e87f3bab80a725eacb30cc6e97"
+      },
+      "metadata": {
+        "id": "community_134767426_counts_to_fpkm_tpm",
+        "name": {
+          "zh": "Counts to FPKM/TPM",
+          "en": "Counts to FPKM/TPM"
+        },
+        "description": {
+          "zh": "将 featureCounts 插件生成的 clean.count.txt（仅含 Geneid 与样本计数）转换为标准化的 FPKM 与 TPM 表达矩阵。通过 GTF/GFF 注释文件自动计算每个基因的外显子合并长度，无需额外的长度文件。适用于跨样本表达量比较及下游可视化。",
+          "en": "Convert the featureCounts clean.count.txt (Geneid + sample counts only) into normalized FPKM and TPM matrices. Gene lengths are computed automatically from a GTF/GFF annotation (merged exon length), no separate length file needed."
+        },
+        "type": "cli",
+        "category": {
+          "zh": "转录组分析",
+          "en": "Transcriptomics"
+        },
+        "docker_image": "python:3.11-slim",
+        "local_binary": false,
+        "execution_mode": "single",
+        "shell": "bash",
+        "force_shell_entrypoint": true,
+        "script": "scripts/counts_to_fpkm_tpm.py",
+        "layout": {
+          "default_columns": 3,
+          "default_gap": 12,
+          "row_groups": {
+            "input_row": {
+              "columns": 2,
+              "gap": 12
+            },
+            "option_row": {
+              "columns": 3,
+              "gap": 12
+            }
+          }
+        },
+        "parameters": [
+          {
+            "id": "count_file",
+            "label": {
+              "zh": "Count 矩阵 (clean.count.txt)",
+              "en": "Count Matrix (clean.count.txt)"
+            },
+            "type": "file",
+            "required": true,
+            "allow_multiple": false,
+            "accept": ".txt,.tsv,.csv",
+            "row_group": "input_row",
+            "description": {
+              "zh": "featureCounts 插件输出的 clean.count.txt，第一列为基因 ID，其余列为各样本原始计数。",
+              "en": "The clean.count.txt from the featureCounts plugin: first column = gene IDs, remaining columns = raw sample counts."
+            }
+          },
+          {
+            "id": "gtf_file",
+            "label": {
+              "zh": "注释文件 GTF/GFF",
+              "en": "Annotation GTF/GFF"
+            },
+            "type": "file",
+            "required": true,
+            "allow_multiple": false,
+            "accept": ".gtf,.gff,.gff3",
+            "row_group": "input_row",
+            "description": {
+              "zh": "用于计算基因长度（合并外显子长度）。建议使用与 featureCounts 定量时相同的注释文件。",
+              "en": "Used to compute gene length (merged exon length). Use the same annotation as the featureCounts step."
+            }
+          },
+          {
+            "id": "gene_id_attr",
+            "label": {
+              "zh": "基因 ID 属性名",
+              "en": "Gene ID Attribute"
+            },
+            "type": "text",
+            "default": "gene_id",
+            "row_group": "option_row",
+            "description": {
+              "zh": "GTF 属性中表示基因 ID 的键名，通常为 gene_id（GTF）或 ID/gene（GFF3）。",
+              "en": "GTF attribute key for gene ID, usually gene_id (GTF) or ID/gene (GFF3)."
+            }
+          },
+          {
+            "id": "prefix",
+            "label": {
+              "zh": "输出文件前缀",
+              "en": "Output Prefix"
+            },
+            "type": "text",
+            "default": "gene",
+            "row_group": "option_row",
+            "description": {
+              "zh": "输出文件名前缀，默认 gene",
+              "en": "Output file name prefix (default: gene)"
+            }
+          }
+        ],
+        "outputs": [
+          {
+            "id": "fpkm_matrix",
+            "label": {
+              "zh": "FPKM 矩阵",
+              "en": "FPKM Matrix"
+            },
+            "type": "csv",
+            "file_pattern": "\\.FPKM\\.csv$",
+            "description": {
+              "zh": "Fragments Per Kilobase of transcript per Million mapped reads 标准化矩阵",
+              "en": "FPKM normalized expression matrix"
+            }
+          },
+          {
+            "id": "tpm_matrix",
+            "label": {
+              "zh": "TPM 矩阵",
+              "en": "TPM Matrix"
+            },
+            "type": "csv",
+            "file_pattern": "\\.TPM\\.csv$",
+            "description": {
+              "zh": "Transcripts Per Million 标准化矩阵（推荐用于跨样本比较）",
+              "en": "TPM normalized expression matrix (recommended for cross-sample comparison)"
+            }
+          }
+        ],
+        "command_template": "python3 /scripts/scripts/counts_to_fpkm_tpm.py --count_file {count_file} --gtf_file {gtf_file} --gene_id_attr '{gene_id_attr}' --prefix '{prefix}' --output_dir {output_dir}",
+        "developer_signature": {
+          "tool_name": "Counts to FPKM/TPM",
+          "developer": "jianbai-design",
+          "develop_time": "2026-09-18"
+        },
+        "version": "1.0.0",
+        "marketplace": {
+          "source": "github:jianbai-design/PrimiGenius-community-plugins",
+          "owner_github_id": 134767426,
+          "owner_login": "jianbai-design",
+          "submitted_by": {
+            "id": 134767426,
+            "login": "jianbai-design"
+          }
+        }
+      },
+      "sha256": "0875f7802a785adbf2d8f9c66297e27d934cbbb290971db80499d6f17abb106a",
+      "size": 4470,
+      "files": {
+        "config.json": {
+          "sha256": "d66cb405265d1cdf75079ab6efc239f5372e59046838860c43a1d2fd009848a4",
+          "size": 4578
+        },
+        "scripts/counts_to_fpkm_tpm.py": {
+          "sha256": "3215a47d12aef526d29371f41d405771342c7479e11f43780dd5e63dc97d8760",
+          "size": 7863
+        }
+      },
+      "changes": [
+        {
+          "path": "config.json",
+          "change": "added"
+        },
+        {
+          "path": "scripts/counts_to_fpkm_tpm.py",
+          "change": "added"
+        }
+      ],
+      "changelog": "转换",
+      "status": "pending_review"
+    }
+  },
   "blocked": [],
   "reviewers": [],
-  "audit": [],
+  "audit": [
+    {
+      "event": "issue:3",
+      "actor": {
+        "id": 134767426,
+        "login": "jianbai-design"
+      },
+      "issue": 3,
+      "action": "submit",
+      "at": "2026-10-23T04:17:34Z"
+    }
+  ],
   "schema": 1
 }
