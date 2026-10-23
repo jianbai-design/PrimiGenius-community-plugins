@@ -1488,6 +1488,14 @@
         "login": "jianbai-design"
       },
       "status": "open"
+    },
+    "9": {
+      "kind": "management",
+      "author": {
+        "id": 134767426,
+        "login": "jianbai-design"
+      },
+      "status": "open"
     }
   },
   "blocked": [],
@@ -1614,6 +1622,26 @@
       "issue": 8,
       "action": "submit",
       "at": "2026-10-23T12:05:06Z"
+    },
+    {
+      "event": "comment:issue-9",
+      "actor": {
+        "id": 134767426,
+        "login": "jianbai-design"
+      },
+      "issue": 9,
+      "action": "unlist",
+      "at": "2026-10-23T12:11:40Z"
+    },
+    {
+      "event": "issue:9",
+      "actor": {
+        "id": 134767426,
+        "login": "jianbai-design"
+      },
+      "issue": 9,
+      "action": "submit",
+      "at": "2026-10-23T12:11:40Z"
     }
   ],
   "schema": 1
