@@ -533,7 +533,7 @@
           "size": 7988
         }
       },
-      "listed": true
+      "listed": false
     }
   },
   "requests": {
@@ -1464,6 +1464,14 @@
       "changelog": "做了一些修改",
       "status": "published",
       "reason": ""
+    },
+    "6": {
+      "kind": "management",
+      "author": {
+        "id": 134767426,
+        "login": "jianbai-design"
+      },
+      "status": "open"
     }
   },
   "blocked": [],
@@ -1528,6 +1536,26 @@
       "issue": 5,
       "action": "approve",
       "at": "2026-10-23T06:54:19Z"
+    },
+    {
+      "event": "comment:issue-6",
+      "actor": {
+        "id": 134767426,
+        "login": "jianbai-design"
+      },
+      "issue": 6,
+      "action": "unlist",
+      "at": "2026-10-23T06:56:49Z"
+    },
+    {
+      "event": "issue:6",
+      "actor": {
+        "id": 134767426,
+        "login": "jianbai-design"
+      },
+      "issue": 6,
+      "action": "submit",
+      "at": "2026-10-23T06:56:49Z"
     }
   ],
   "schema": 1
