@@ -797,8 +797,58 @@
           }
         }
       },
-      "published": null,
-      "files": {},
+      "published": {
+        "id": "community_242235968_sra_data_download_faster",
+        "version": "1.2.0",
+        "sha256": "253d6712699db13790d8383d92ddaadf712686fce89545620ae3cb688e3e0c22",
+        "size": 26225,
+        "owner_github_id": 242235968,
+        "source": "github:jianbai-design/PrimiGenius-community-plugins",
+        "tag": "community_242235968_sra_data_download_faster-v1.2.0",
+        "asset": "community_242235968_sra_data_download_faster-1.2.0.zip",
+        "min_app_version": "0.0.0",
+        "manifest": "eyJhc3NldCI6ImNvbW11bml0eV8yNDIyMzU5Njhfc3JhX2RhdGFfZG93bmxvYWRfZmFzdGVyLTEuMi4wLnppcCIsImlkIjoiY29tbXVuaXR5XzI0MjIzNTk2OF9zcmFfZGF0YV9kb3dubG9hZF9mYXN0ZXIiLCJtaW5fYXBwX3ZlcnNpb24iOiIwLjAuMCIsIm93bmVyX2dpdGh1Yl9pZCI6MjQyMjM1OTY4LCJzaGEyNTYiOiIyNTNkNjcxMjY5OWRiMTM3OTBkODM4M2Q5MmRkYWFkZjcxMjY4NmZjZTg5NTQ1NjIwYWUzY2I2ODhlM2UwYzIyIiwic2l6ZSI6MjYyMjUsInNvdXJjZSI6ImdpdGh1YjpqaWFuYmFpLWRlc2lnbi9QcmltaUdlbml1cy1jb21tdW5pdHktcGx1Z2lucyIsInRhZyI6ImNvbW11bml0eV8yNDIyMzU5Njhfc3JhX2RhdGFfZG93bmxvYWRfZmFzdGVyLXYxLjIuMCIsInZlcnNpb24iOiIxLjIuMCJ9",
+        "signature": "T+HRvePFmAkCNhzR0SDrS+ZlejNModbAXMKLAW1xmwfPNt8zin/SpVVUdp1xB8MmPb1oeZMfdaDcwYX3e2YVD8rDzhYa9w2XRoFZd2nvEuRIdEX0sdhwffBt6H4QG4HhYiGegMqs/vp5LBtu477d/HBkkWXJns3B7fxwNMOFE3hViEyD4iaZxVkDaQO7JBDkAxdLLsDZxOiR37K5MHIPYhvbQZrcLcH/eYZ5sf5iZzcSPUrt/g48qvdlmiBXQ6VHTNnfUD2Gb9eRD7liOfvnHZjH4X2VQoiBgCZut6Aay0b/dHUr5YYVNaLTUm4uF2iSUNl/ZGX2GCRCWHcgQfzd5sd7uzcidZNoOY4W7SGHF/yfoIcz2R+85sRva3p1WEWx0jmrIUc0RLvEYvA9Z87/X78y5EKhXI8bmxeVunUAUJEEx0fzHGOY5zyg++pAfBofQ5INYVigsyBCFsZiwjUuFe6SFNUJZQ4srRqLPyezhTu0+CczvJMLod7aJA0Bdpyg",
+        "url": "https://github.com/jianbai-design/PrimiGenius-community-plugins/releases/tag/community_242235968_sra_data_download_faster-v1.2.0"
+      },
+      "files": {
+        ".gitignore": {
+          "sha256": "63eddd28d1afe2b03909e48eb4624f3767e0c986b61b901c50eeed802ed01ac6",
+          "size": 20
+        },
+        "Dockerfile": {
+          "sha256": "0abd2f6f2e70c3d55ffa8f6f827d591facc0b5e576c8b052b52388ddf16d72e3",
+          "size": 1363
+        },
+        "README.zh-CN.md": {
+          "sha256": "f23ecf2e597ffc8bf6283b83e8456117086fb99779b97b7bcce09449f9ff79c9",
+          "size": 4897
+        },
+        "TEST_REPORT.md": {
+          "sha256": "ce48983c8f5c8f7f3a864f81485b44389324c816596eba3461a375b7d59ffd91",
+          "size": 3372
+        },
+        "build-runtime.ps1": {
+          "sha256": "e3442c5190d6fba5e8923d8a5cab7620bbb773e44c9b227c2ce35688e0f86907",
+          "size": 2096
+        },
+        "config.json": {
+          "sha256": "a30dd576d41579c9986bd6ff318cd67a634e92bbe6b90d42e81281a0c2125a8a",
+          "size": 7122
+        },
+        "scripts/run_s3_fastq.sh": {
+          "sha256": "89253b70346ea8282ea9b02f41139d14cae6f8180cf8fb2e366e0aceea8df690",
+          "size": 343
+        },
+        "scripts/s3_fastq.py": {
+          "sha256": "2df149074b46f6d6be1c211b0297cfaaeab0feb32dca63a771f216f28ec1a129",
+          "size": 42747
+        },
+        "tests/test_s3_fastq.py": {
+          "sha256": "cbb4a17ffad27a615939acee55edb27e2c57b7d275e1a9da329d6f4bbf7ee53e",
+          "size": 10992
+        }
+      },
       "listed": true
     }
   },
@@ -2124,7 +2174,8 @@
         }
       ],
       "changelog": "",
-      "status": "pending_review"
+      "status": "published",
+      "reason": ""
     }
   },
   "blocked": [],
@@ -2301,6 +2352,16 @@
       "issue": 11,
       "action": "submit",
       "at": "2026-10-26T09:14:14Z"
+    },
+    {
+      "event": "comment:6513933057",
+      "actor": {
+        "id": 134767426,
+        "login": "jianbai-design"
+      },
+      "issue": 11,
+      "action": "approve",
+      "at": "2026-10-30T03:04:45Z"
     }
   ],
   "schema": 1
