@@ -2176,6 +2176,14 @@
       "changelog": "",
       "status": "published",
       "reason": ""
+    },
+    "12": {
+      "kind": "management",
+      "author": {
+        "id": 134767426,
+        "login": "jianbai-design"
+      },
+      "status": "open"
     }
   },
   "blocked": [],
@@ -2362,6 +2370,26 @@
       "issue": 11,
       "action": "approve",
       "at": "2026-10-30T03:04:45Z"
+    },
+    {
+      "event": "comment:issue-12",
+      "actor": {
+        "id": 134767426,
+        "login": "jianbai-design"
+      },
+      "issue": 12,
+      "action": "unlist",
+      "at": "2026-10-30T06:43:43Z"
+    },
+    {
+      "event": "issue:12",
+      "actor": {
+        "id": 134767426,
+        "login": "jianbai-design"
+      },
+      "issue": 12,
+      "action": "submit",
+      "at": "2026-10-30T06:43:43Z"
     }
   ],
   "schema": 1
