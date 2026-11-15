@@ -2792,7 +2792,8 @@
         }
       ],
       "changelog": "从 NCBI 官方 AWS 公共桶分片高速下载完整质量 SRA，逐个 accession 自动识别单端或双端，再用 fasterq-dump 与 pigz 生成并校验 FASTQ。插件自带离线运行环境，首次运行本地构建镜像，不依赖公共镜像站。",
-      "status": "pending_review"
+      "status": "withdrawn",
+      "reason": ""
     }
   },
   "blocked": [],
@@ -3029,6 +3030,16 @@
       "issue": 14,
       "action": "submit",
       "at": "2026-11-15T09:14:22Z"
+    },
+    {
+      "event": "comment:6892358789",
+      "actor": {
+        "id": 242235968,
+        "login": "XvZiQiang"
+      },
+      "issue": 14,
+      "action": "withdraw",
+      "at": "2026-11-15T09:30:22Z"
     }
   ],
   "schema": 1
