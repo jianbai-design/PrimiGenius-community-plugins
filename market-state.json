@@ -1099,8 +1099,62 @@
           }
         }
       },
-      "published": null,
-      "files": {},
+      "published": {
+        "id": "community_242235968_sra_data_download_high_speed_auto",
+        "version": "2.0.0",
+        "sha256": "865aa7f014864fcaac50145ec4736d51619e714b5c6732e78499ae7072b2c697",
+        "size": 48745805,
+        "owner_github_id": 242235968,
+        "source": "github:jianbai-design/PrimiGenius-community-plugins",
+        "tag": "community_242235968_sra_data_download_high_speed_auto-v2.0.0",
+        "asset": "community_242235968_sra_data_download_high_speed_auto-2.0.0.zip",
+        "min_app_version": "0.0.0",
+        "manifest": "eyJhc3NldCI6ImNvbW11bml0eV8yNDIyMzU5Njhfc3JhX2RhdGFfZG93bmxvYWRfaGlnaF9zcGVlZF9hdXRvLTIuMC4wLnppcCIsImlkIjoiY29tbXVuaXR5XzI0MjIzNTk2OF9zcmFfZGF0YV9kb3dubG9hZF9oaWdoX3NwZWVkX2F1dG8iLCJtaW5fYXBwX3ZlcnNpb24iOiIwLjAuMCIsIm93bmVyX2dpdGh1Yl9pZCI6MjQyMjM1OTY4LCJzaGEyNTYiOiI4NjVhYTdmMDE0ODY0ZmNhYWM1MDE0NWVjNDczNmQ1MTYxOWU3MTRiNWM2NzMyZTc4NDk5YWU3MDcyYjJjNjk3Iiwic2l6ZSI6NDg3NDU4MDUsInNvdXJjZSI6ImdpdGh1YjpqaWFuYmFpLWRlc2lnbi9QcmltaUdlbml1cy1jb21tdW5pdHktcGx1Z2lucyIsInRhZyI6ImNvbW11bml0eV8yNDIyMzU5Njhfc3JhX2RhdGFfZG93bmxvYWRfaGlnaF9zcGVlZF9hdXRvLXYyLjAuMCIsInZlcnNpb24iOiIyLjAuMCJ9",
+        "signature": "ZDvEAIm39mzjTqTAgdPjfoqWJulD/N6vOrlDJjKuCokO7d2ABfSXiU2OBNKalUgLjNyY9npelswmGmPEFORGyPHaix82pRnE0O8idskNWhMd1E1ga8A0DwrYPSngS94wVAWEymitr9k2UqU75xalZLOddcf6qpNpgQLTooPU3gSTC0hbto1Hi80ZD85mZ1B3QA3F1+jrqiV9jtBfOxZj8op8B75D+hKHCfJ74RxGCKYmxYdZ31IWfuRcZf20qx9khggmoUaBkHT9ESF7/HyoGj2PtaNY2cE34YFQtcxT/RzM4Gl5CLbq//waR5TsY6ekV8CQ7MfqCucfN/kyLY+Fkj7BlVn6KeiYTTmCBqVtFDh9cAEGsrrUhztL/9lijapEQghgFHP8bUE+TczRmujCg+lCInowDmdHFSovsfEIyiDx+z0MDOI8mCnmazCnUZqtNPWXVHAxACKZ+R+kmfyA3bsOWgGHeQK3Gb6wVLQMTaDfJUn1NA2B6mrxnVLCVckH",
+        "url": "https://github.com/jianbai-design/PrimiGenius-community-plugins/releases/tag/community_242235968_sra_data_download_high_speed_auto-v2.0.0"
+      },
+      "files": {
+        ".gitignore": {
+          "sha256": "63eddd28d1afe2b03909e48eb4624f3767e0c986b61b901c50eeed802ed01ac6",
+          "size": 20
+        },
+        "Dockerfile": {
+          "sha256": "4aa368b3fd21e3da6cedd3163087696328b0d4b99e85cc396644cfa5d886d698",
+          "size": 726
+        },
+        "README.zh-CN.md": {
+          "sha256": "645759ee1823953ca0cd34599ae0f46ae1b6c7236a70b59e6cf3a6c8fc4e3d63",
+          "size": 3132
+        },
+        "TEST_REPORT.md": {
+          "sha256": "6fc7a67e1191482b4b98fc187128ad994bada3d9f243b0a568564ca8aacf11e3",
+          "size": 1883
+        },
+        "build-runtime.ps1": {
+          "sha256": "17cee232f108001c10657b39b79e60e99c27785f3c19b95dc6815735e37a6fc2",
+          "size": 1647
+        },
+        "config.json": {
+          "sha256": "6f3962616ce69d80d5f52f9c3abae65117af16ae1da808e114d75bc6f8d9549b",
+          "size": 6800
+        },
+        "runtime/rootfs.tar.gz": {
+          "sha256": "afe7c6ab3860f4f93fbfe0c2877b0016f6e440fe48e0d1550cd88aa5f1b02248",
+          "size": 49062898
+        },
+        "scripts/run_s3_fastq.sh": {
+          "sha256": "62cd53d1d223e809563eff8c9c20062aaef3a845cd1f69363db93895b5c2d325",
+          "size": 61
+        },
+        "scripts/s3_fastq.py": {
+          "sha256": "8df7323ba4658339f45178f5465cd5d08afb8b71ed3e483ef2ef71b674c98d90",
+          "size": 37992
+        },
+        "tests/test_s3_fastq.py": {
+          "sha256": "0ee0b6c9b62aab9898bce33e5f5e5dc42bf90c8f80fbcf7f52fb4daed4898281",
+          "size": 14042
+        }
+      },
       "listed": true
     }
   },
@@ -3142,7 +3196,8 @@
         }
       ],
       "changelog": "从 NCBI 官方 AWS 公共桶分片高速下载完整质量 SRA，逐个 accession 自动识别单端或双端，再用 fasterq-dump 与 pigz 生成并校验 FASTQ。插件自带离线运行环境，首次运行本地构建镜像，不依赖公共镜像站。",
-      "status": "pending_review"
+      "status": "published",
+      "reason": ""
     }
   },
   "blocked": [],
@@ -3399,6 +3454,16 @@
       "issue": 16,
       "action": "submit",
       "at": "2026-11-15T11:30:20Z"
+    },
+    {
+      "event": "comment:6915563230",
+      "actor": {
+        "id": 134767426,
+        "login": "jianbai-design"
+      },
+      "issue": 16,
+      "action": "approve",
+      "at": "2026-11-16T11:48:25Z"
     }
   ],
   "schema": 1
