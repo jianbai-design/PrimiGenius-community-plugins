@@ -858,7 +858,12 @@
         "id": 242235968,
         "login": "XvZiQiang"
       },
-      "collaborators": [],
+      "collaborators": [
+        {
+          "id": 134767426,
+          "login": "jianbai-design"
+        }
+      ],
       "metadata": {
         "id": "community_242235968_sra_data_download_high_speed_auto",
         "name": {
@@ -3514,7 +3519,8 @@
         }
       ],
       "changelog": "优化界面参数排版",
-      "status": "awaiting_author"
+      "status": "pending_review",
+      "reason": ""
     }
   },
   "blocked": [],
@@ -3791,6 +3797,16 @@
       "issue": 18,
       "action": "submit",
       "at": "2026-11-16T12:22:54Z"
+    },
+    {
+      "event": "comment:6936995304",
+      "actor": {
+        "id": 134767426,
+        "login": "jianbai-design"
+      },
+      "issue": 18,
+      "action": "author-accept",
+      "at": "2026-11-17T03:16:06Z"
     }
   ],
   "schema": 1
