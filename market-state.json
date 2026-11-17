@@ -892,15 +892,15 @@
           "default_gap": 12,
           "row_groups": {
             "input_row": {
-              "columns": 4,
+              "columns": 2,
               "gap": 12
             },
             "transfer_row": {
-              "columns": 4,
+              "columns": 2,
               "gap": 12
             },
             "validation_row": {
-              "columns": 4,
+              "columns": 2,
               "gap": 12
             }
           }
@@ -970,7 +970,7 @@
             "default": "",
             "row_group": "input_row",
             "layout": {
-              "col_span": 3
+              "col_span": 1
             },
             "showWhen": {
               "param": "input_type",
@@ -998,7 +998,7 @@
             ],
             "row_group": "input_row",
             "layout": {
-              "col_span": 2
+              "col_span": 1
             },
             "showWhen": {
               "param": "input_type",
@@ -1048,7 +1048,7 @@
             "default": 8,
             "min": 1,
             "max": 12,
-            "row_group": "transfer_row",
+            "row_group": "validation_row",
             "description": {
               "zh": "每个固定分片独立重试并从已写入字节续传；完整性失败会清除错误分片。",
               "en": "Each fixed range retries independently from its written bytes; integrity failures remove bad ranges."
@@ -1090,7 +1090,7 @@
           }
         ],
         "command_template": "export input_type='{input_type}' accession='{accession}' accession_text='{accession_text}' accession_file={accession_file} download_connections='{download_connections}' threads='{threads}' retry_count='{retry_count}' keep_sra_cache='{keep_sra_cache}' output_dir='{output_dir}'; tr -d '\\r' < /scripts/scripts/run_s3_fastq.sh > /tmp/run_s3_fastq.sh && exec sh /tmp/run_s3_fastq.sh",
-        "version": "2.0.0",
+        "version": "2.0.1",
         "developer_signature": {
           "developer": "XvZiQiang"
         },
@@ -1099,24 +1099,24 @@
           "owner_github_id": 242235968,
           "owner_login": "XvZiQiang",
           "submitted_by": {
-            "id": 242235968,
-            "login": "XvZiQiang"
+            "id": 134767426,
+            "login": "jianbai-design"
           }
         }
       },
       "published": {
         "id": "community_242235968_sra_data_download_high_speed_auto",
-        "version": "2.0.0",
-        "sha256": "865aa7f014864fcaac50145ec4736d51619e714b5c6732e78499ae7072b2c697",
-        "size": 48745805,
+        "version": "2.0.1",
+        "sha256": "b0dc8456d8e7b91063b4623660920098db1e594126f8ce9ab0400fa1abc609b5",
+        "size": 48745812,
         "owner_github_id": 242235968,
         "source": "github:jianbai-design/PrimiGenius-community-plugins",
-        "tag": "community_242235968_sra_data_download_high_speed_auto-v2.0.0",
-        "asset": "community_242235968_sra_data_download_high_speed_auto-2.0.0.zip",
+        "tag": "community_242235968_sra_data_download_high_speed_auto-v2.0.1",
+        "asset": "community_242235968_sra_data_download_high_speed_auto-2.0.1.zip",
         "min_app_version": "0.0.0",
-        "manifest": "eyJhc3NldCI6ImNvbW11bml0eV8yNDIyMzU5Njhfc3JhX2RhdGFfZG93bmxvYWRfaGlnaF9zcGVlZF9hdXRvLTIuMC4wLnppcCIsImlkIjoiY29tbXVuaXR5XzI0MjIzNTk2OF9zcmFfZGF0YV9kb3dubG9hZF9oaWdoX3NwZWVkX2F1dG8iLCJtaW5fYXBwX3ZlcnNpb24iOiIwLjAuMCIsIm93bmVyX2dpdGh1Yl9pZCI6MjQyMjM1OTY4LCJzaGEyNTYiOiI4NjVhYTdmMDE0ODY0ZmNhYWM1MDE0NWVjNDczNmQ1MTYxOWU3MTRiNWM2NzMyZTc4NDk5YWU3MDcyYjJjNjk3Iiwic2l6ZSI6NDg3NDU4MDUsInNvdXJjZSI6ImdpdGh1YjpqaWFuYmFpLWRlc2lnbi9QcmltaUdlbml1cy1jb21tdW5pdHktcGx1Z2lucyIsInRhZyI6ImNvbW11bml0eV8yNDIyMzU5Njhfc3JhX2RhdGFfZG93bmxvYWRfaGlnaF9zcGVlZF9hdXRvLXYyLjAuMCIsInZlcnNpb24iOiIyLjAuMCJ9",
-        "signature": "ZDvEAIm39mzjTqTAgdPjfoqWJulD/N6vOrlDJjKuCokO7d2ABfSXiU2OBNKalUgLjNyY9npelswmGmPEFORGyPHaix82pRnE0O8idskNWhMd1E1ga8A0DwrYPSngS94wVAWEymitr9k2UqU75xalZLOddcf6qpNpgQLTooPU3gSTC0hbto1Hi80ZD85mZ1B3QA3F1+jrqiV9jtBfOxZj8op8B75D+hKHCfJ74RxGCKYmxYdZ31IWfuRcZf20qx9khggmoUaBkHT9ESF7/HyoGj2PtaNY2cE34YFQtcxT/RzM4Gl5CLbq//waR5TsY6ekV8CQ7MfqCucfN/kyLY+Fkj7BlVn6KeiYTTmCBqVtFDh9cAEGsrrUhztL/9lijapEQghgFHP8bUE+TczRmujCg+lCInowDmdHFSovsfEIyiDx+z0MDOI8mCnmazCnUZqtNPWXVHAxACKZ+R+kmfyA3bsOWgGHeQK3Gb6wVLQMTaDfJUn1NA2B6mrxnVLCVckH",
-        "url": "https://github.com/jianbai-design/PrimiGenius-community-plugins/releases/tag/community_242235968_sra_data_download_high_speed_auto-v2.0.0"
+        "manifest": "eyJhc3NldCI6ImNvbW11bml0eV8yNDIyMzU5Njhfc3JhX2RhdGFfZG93bmxvYWRfaGlnaF9zcGVlZF9hdXRvLTIuMC4xLnppcCIsImlkIjoiY29tbXVuaXR5XzI0MjIzNTk2OF9zcmFfZGF0YV9kb3dubG9hZF9oaWdoX3NwZWVkX2F1dG8iLCJtaW5fYXBwX3ZlcnNpb24iOiIwLjAuMCIsIm93bmVyX2dpdGh1Yl9pZCI6MjQyMjM1OTY4LCJzaGEyNTYiOiJiMGRjODQ1NmQ4ZTdiOTEwNjNiNDYyMzY2MDkyMDA5OGRiMWU1OTQxMjZmOGNlOWFiMDQwMGZhMWFiYzYwOWI1Iiwic2l6ZSI6NDg3NDU4MTIsInNvdXJjZSI6ImdpdGh1YjpqaWFuYmFpLWRlc2lnbi9QcmltaUdlbml1cy1jb21tdW5pdHktcGx1Z2lucyIsInRhZyI6ImNvbW11bml0eV8yNDIyMzU5Njhfc3JhX2RhdGFfZG93bmxvYWRfaGlnaF9zcGVlZF9hdXRvLXYyLjAuMSIsInZlcnNpb24iOiIyLjAuMSJ9",
+        "signature": "Dk2Dvj2UN4Ag6/uSQKlZ2ma7xKrp0s84YTSUpqMLGMykMqLfzDFo3ubZWx1Nh8Hw4pEf9Ii64zZEOAW8aLmRINnXA8AgtmA1iVEZmUtrOQoiWbtzxv1T0o670pYEiiReLrLrkwZM+TVJfsp1sLW61IUKUKGCmNjl9kj1FYzebiPSyw5al2gGzlJYEH92HoTvhIXkZbrAyXNtII/gvDi5VbqX2mUg/jOANL3jeAUjzOFIqJhNXz5D/7E0IA6z1Wgka8JqlyMZBdmRGdsUGygK8NjyLJnt86vWKM/ybQZcpPfb+zHEQ/8Sd0i78ZQ1S/IFW3u77P7wqRi1PkLP7FqEjwjQ+bIBc1JYEj/Ivipi1uOq1t1j65yquyE5LAsSfDziIlm5k6E43FyqPwU05Vj6u8luc8SRk7iOG0CSlUH04sdmlEW1/iJCu26QiDgCXSjUsGJO+3dTxjJTFEo11LESYGIw/OjYwETii7SAfEVMSghrdNeiHpySCuCeFAXOqo2H",
+        "url": "https://github.com/jianbai-design/PrimiGenius-community-plugins/releases/tag/community_242235968_sra_data_download_high_speed_auto-v2.0.1"
       },
       "files": {
         ".gitignore": {
@@ -1140,8 +1140,8 @@
           "size": 1647
         },
         "config.json": {
-          "sha256": "6f3962616ce69d80d5f52f9c3abae65117af16ae1da808e114d75bc6f8d9549b",
-          "size": 6800
+          "sha256": "cd14eb1603be40a593eeed1dd4cf7393f05c188ab2ac599e13afe8542dc402f7",
+          "size": 6807
         },
         "runtime/rootfs.tar.gz": {
           "sha256": "afe7c6ab3860f4f93fbfe0c2877b0016f6e440fe48e0d1550cd88aa5f1b02248",
@@ -3519,7 +3519,7 @@
         }
       ],
       "changelog": "优化界面参数排版",
-      "status": "pending_review",
+      "status": "published",
       "reason": ""
     }
   },
@@ -3807,6 +3807,16 @@
       "issue": 18,
       "action": "author-accept",
       "at": "2026-11-17T03:16:06Z"
+    },
+    {
+      "event": "comment:6937012445",
+      "actor": {
+        "id": 134767426,
+        "login": "jianbai-design"
+      },
+      "issue": 18,
+      "action": "approve",
+      "at": "2026-11-17T03:17:01Z"
     }
   ],
   "schema": 1
