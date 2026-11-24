@@ -3845,7 +3845,8 @@
         }
       ],
       "changelog": "修复多行文本批量输入与取消保留 SRA 缓存无效问题，支持注释/表头、环境变量代理、多端 MULTI 文库、pigz 多线程校验与批量流水线并行预取。",
-      "status": "awaiting_author"
+      "status": "pending_review",
+      "reason": ""
     }
   },
   "blocked": [],
@@ -4152,6 +4153,16 @@
       "issue": 19,
       "action": "submit",
       "at": "2026-11-24T02:49:33Z"
+    },
+    {
+      "event": "comment:7120527421",
+      "actor": {
+        "id": 134767426,
+        "login": "jianbai-design"
+      },
+      "issue": 19,
+      "action": "author-accept",
+      "at": "2026-11-24T02:50:26Z"
     }
   ],
   "schema": 1
